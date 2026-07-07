@@ -8,7 +8,7 @@
     <!-- 说明提示框 -->
     <div class="layui-col-lg12">
       <div class="setting-msg">
-      过渡页使用说明，请参考：<a href="https://dwz.ovh/mrkx1" target = "_blank" title = "过渡页使用说明">https://dwz.ovh/mrkx1</a>
+      过渡页使用说明，请参考：过渡页使用说明
       </div>
     </div>
     <!-- 说明提示框END -->

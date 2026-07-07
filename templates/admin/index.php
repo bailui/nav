@@ -7,7 +7,7 @@
     <div style="padding: 15px;">
       <div class="layui-container" style="margin-top: 2em; margin-bottom: 1em;">
         <blockquote class="layui-elem-quote" style="border-left-color: #ff5722; background-color: #fff4e8; color: #8a4b08; font-size: 15px; line-height: 1.8;">
-          <strong>OneNav重构版ZMark现已发布，</strong><a href="https://dwz.ovh/amr6" target="_blank" rel="noopener noreferrer" style="color: #ff5722; font-weight: bold; text-decoration: underline;">点此了解如何升级</a>。
+          <strong>白鹿io导航</strong> - 个人书签导航管理工具，欢迎使用！
         </blockquote>
       </div>
       <div class="layui-container" style = "margin-top:2em;">
@@ -19,7 +19,7 @@
               <p class="text">
                 <span id = "current_version">
                 <?php echo file_get_contents('version.txt'); ?></span>
-                <span id = "update_msg" style = "display:none;">（<a style = "color: #FF5722;" href = "https://github.com/helloxz/onenav/releases" title = "下载最新版OneNav" target = "_blank" id="current_version">有可用更新</a>）</span>
+                <span id = "update_msg" style = "display:none;">（<a style = "color: #FF5722;" href = "https://github.com/bailui/onenav/releases" title = "下载最新版" target = "_blank" id="current_version">有可用更新</a>）</span>
               </p>
             </div>
             </div>
@@ -62,59 +62,32 @@
 
           <div class="layui-col-lg3">
             <div class = "admin-msg">
-              <h2>交流群</h2>
+              <h2>白鹿io官网</h2>
+              <p class="text"><a href="https://www.bailuioai.com/" rel = "nofollow" target="_blank">https://www.bailuioai.com/</a></p>
+            </div>
+          </div>
+
+          <div class="layui-col-lg3">
+            <div class = "admin-msg">
+              <h2>白鹿新闻</h2>
               <p class="text">
-              <a target = "_blank" rel = "nofollow" href="https://dwz.ovh/qxsul" title = "点此加入OneNav交流群">https://dwz.ovh/qxsul</a>
+              <a href="https://news.bailuioai.com/" rel = "nofollow" target="_blank">https://news.bailuioai.com/</a>
               </p>
             </div>
           </div>
 
           <div class="layui-col-lg3">
             <div class = "admin-msg">
-              <h2>社区支持</h2>
-              <p class="text">
-                <a href="https://dwz.ovh/vd0bw" rel = "nofollow" target="_blank" title="访问下问社区">https://dwz.ovh/vd0bw</a>
-              </p>
-            </div>
-          </div>
-
-          <div class="layui-col-lg3">
-            <div class = "admin-msg">
-              <h2>项目地址</h2>
-              <p class="text"><a href="https://github.com/helloxz/onenav" rel = "nofollow" target="_blank">https://github.com/helloxz/onenav</a></p>
-            </div>
-          </div>
-
-          <div class="layui-col-lg3">
-            <div class = "admin-msg">
-              <h2>帮助文档</h2>
-              <p class="text"><a href="https://dwz.ovh/onenav" rel = "nofollow" target="_blank">https://dwz.ovh/onenav</a></p>
-            </div>
-          </div>
-
-          <div class="layui-col-lg3">
-            <div class = "admin-msg">
-              <h2>作者博客</h2>
-              <p class="text">
-              <a href="https://blog.xiaoz.org/" rel = "nofollow" target="_blank">https://blog.xiaoz.org/</a>
-              </p>
-            </div>
-          </div>
-
-          <div class="layui-col-lg3">
-            <div class = "admin-msg">
-             <h2>购买订阅</h2>
-              <p class="text">
-                <a href="https://dwz.ovh/69h9q" rel = "nofollow" target="_blank">https://dwz.ovh/69h9q</a>
-              </p>
+              <h2>GitHub</h2>
+              <p class="text"><a href="https://github.com/bailui" rel = "nofollow" target="_blank">https://github.com/bailui</a></p>
             </div>
           </div>
 
           <div class="layui-col-lg3">
               <div class = "admin-msg">
-                <h2>浏览器扩展</h2>
+                <h2>关于白鹿io</h2>
                 <p class="text">
-                  <a href="https://dwz.ovh/4kxn2" title = "适用于Chromium内核的浏览器扩展" rel = "nofollow" target="_blank">https://dwz.ovh/4kxn2</a>
+                  <span>白鹿io - 法律文书助手 & 个人导航</span>
                 </p>
               </div>
           </div>

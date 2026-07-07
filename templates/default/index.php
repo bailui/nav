@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<title><?php echo $site['title']; ?> - <?php echo $site['subtitle']; ?></title>
 	<meta name="generator" content="EverEdit" />
-	<meta name="author" content="xiaoz<www.xiaoz.me>" />
+	<meta name="author" content="白鹿io<www.bailuioai.com>" />
 	<meta name="keywords" content="<?php echo $site['keywords']; ?>" />
 	<meta name="description" content="<?php echo $site['description']; ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -273,7 +273,7 @@
 	<!-- 未经作者授权，请勿去掉版权，否则可能影响作者更新代码的积极性或直接放弃维护此项目。 -->
 	<footer>
 		<?php if(empty( $site['custom_footer']) ){ ?>
-		© <?php echo date("Y"); ?> Powered by <a target = "_blank" href="https://www.onenav.top/" title = "免费开源的书签管理工具" rel = "nofollow">OneNav</a>.
+		© <?php echo date("Y"); ?> Powered by <a target = "_blank" href="https://www.bailuioai.com/" title = "白鹿io个人书签导航" rel = "nofollow">白鹿io</a>.
 		<?php }else{
 			echo $site['custom_footer'];
 		} ?>

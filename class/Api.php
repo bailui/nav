@@ -2,34 +2,18 @@
 /**
  * name:API核心类
  * update:2025/03
- * author:xiaoz<xiaoz93@outlook.com>
- * blog:xiaoz.me
+ * author: 白鹿io
+ *
  */
 //载入通用函数
 require("./functions/helper.php");
 class Api {
     protected $db;
     public function __construct($db){
-        // 获取API服务器缓存
-        $api_url = $this->getFileCache("api_url");
+        // 白鹿io定制：使用本站作为API地址，不依赖远程服务器
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+        $api_url = $protocol . '://' . $_SERVER['HTTP_HOST'];
         
-        // 如果API地址为空，则设置API地址
-        if ($api_url == ""){
-            // 设置API地址（xiaoz）
-            $api_url = base64_decode("aHR0cHM6Ly9vbmVuYXYueGlhb3oudG9w");
-            // 获取API服务器状态码，超时时间为2s
-            $http_code = $this->GetHeadCode($api_url,2);
-            // 如果状态码为0、301、302均视为失败
-            if( $http_code === 0 || $http_code === 301 || $http_code === 302 ) {
-                // 失败了则设置备用API地址（rss）
-                $api_url = base64_decode("aHR0cHM6Ly9vbmVuYXYucnNzLmluaw==");
-            }
-            // 设置API地址缓存
-            $this->setFileCache("api_url",$api_url,60 * 60 * 24);
-        }
-            
-        
-        // $api_url = base64_decode("aHR0cHM6Ly9vbmVuYXYucnNzLmluaw==");
         // 设置常量
         define("API_URL",$api_url);
         // 修改默认获取模式为关联数组
@@ -1675,7 +1659,7 @@ class Api {
     public function check_weak_password($token){
         $this->auth($token);
         //如果用户名、密码为初始密码，则提示修改
-        if ( ( USER == 'xiaoz' ) && ( PASSWORD == 'xiaoz.me' ) ) {
+        if ( ( USER == 'bailu' ) && ( ENCRYPTED_PASSWORD == '3328b67529ec3913c164e31f99485dca' ) ) {
             $this->err_msg(-1,'Weak password!');
         }
     }
@@ -2260,62 +2244,8 @@ class Api {
      * 验证订阅是否存在
      */
     public function is_subscribe() {
-        //获取订阅SESSION状态
-        session_start();
-        //获取session订阅状态
-        $is_subscribe = $_SESSION['subscribe'];
-        //如果订阅是空的，则请求接口获取订阅状态
-        if ( !isset($is_subscribe) ) {
-            //获取当前站点信息
-            $subscribe = $this->db->get('on_options','value',[ 'key'  =>  "s_subscribe" ]);
-            $domain = $_SERVER['HTTP_HOST'];
-        
-            $subscribe = unserialize($subscribe);
-            //api请求地址
-            $api_url = API_URL."/v1/check_subscribe.php?order_id=".$subscribe['order_id']."&email=".$subscribe['email']."&domain=".$domain;
-            // echo $api_url;
-            try {
-                #GET HTTPS
-                $curl = curl_init($api_url);
-                #设置useragent
-                curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36");
-                curl_setopt($curl, CURLOPT_FAILONERROR, true);
-                curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-                #设置超时时间，最小为1s（可选）
-                curl_setopt($curl , CURLOPT_TIMEOUT, 30);
-    
-                $html = curl_exec($curl);
-                curl_close($curl);
-                //解析json
-                $data = json_decode($html);
-                //var_dump($data->data->end_time);
-                //echo strtotime($data->data->end_time);
-                //var_dump($data->code);
-                //如果状态码返回200，并且订阅没有到期
-                if( (intval($data->code) === 200) && ( $data->data->end_time > ( strtotime( date("Y-m-d",time()) ) )) ) {
-                    $_SESSION['subscribe'] = TRUE;
-                    return TRUE;
-                }
-                else if( intval($data->code === -1000 ) ) {
-                    $_SESSION['subscribe'] = FALSE;
-                    return FALSE;
-                }
-                else{
-                    $_SESSION['subscribe'] = NULL;
-                }
-            } catch (\Throwable $th) {
-                $_SESSION['subscribe'] = NULL;
-            }
-        }
-        if( $is_subscribe == TRUE ) {
-            return TRUE;
-        }
-        else{
-            return FALSE;
-        }
+        // 白鹿io定制：始终返回已订阅状态
+        return TRUE;
     }
     /**
      * name:验证订阅，订阅不存在，则阻止
@@ -3033,18 +2963,8 @@ class Api {
      * 验证订阅是否有效
      */
     public function get_subscribe_status(){
-        // var_dump($_SERVER['HTTP_HOST']);
-        //验证授权
-        $this->auth($token);
-        // 获取订阅结果
-        $result = $this->is_subscribe();
-
-        if( $result === TRUE ) {
-            $this->return_json(200,'Active','success');
-        }
-        else{
-            $this->return_json(-2000,'','failure');
-        }
+        // 白鹿io定制：始终返回已订阅状态，无限制
+        $this->return_json(200,'Active','success');
     }
 
     /**
@@ -3438,7 +3358,7 @@ class Api {
         if (!empty($_GET)) {
             // 使用 http_build_query() 函数生成查询字符串
             $query_string = http_build_query($_GET);
-            // 向https://onenav.xiaoz.top/v1/check_subscribe.php 发起GET请求，然后返回内容
+            // 白鹿io：订阅检查已本地化
             // 拼接完整的 URL
             $target_url = API_URL . '/v1/check_subscribe.php?' . $query_string;
             echo curl_get($target_url);
@@ -3532,7 +3452,7 @@ class Api {
             echo "0.0.0";
             exit;
         }
-        // 请求：https://onenav.xiaoz.top/v1/get_version.php?version=1.1.1
+        // 白鹿io：版本检查已本地化
         $url = API_URL . '/v1/get_version.php?version=' . $version;
         // 设置响应头为text类型
         header('Content-Type: text/plain');

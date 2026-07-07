@@ -1,7 +1,7 @@
 <?php
 /**
  * name: OneNav安装初始化文件
- * author: xiaoz<xiaoz93@outlook.com>
+ * author: 白鹿io
  */
 
  /**
@@ -16,8 +16,8 @@ function check_env() {
 
     // var_dump($uri);
     
-    if( ( $php_version < 7 ) || ( $php_version > 8 ) ) {
-        exit("当前PHP版本{$php_version}不满足要求，需要7.0 <= PHP <= 7.4");
+    if( ( $php_version < 7 ) ) {
+        exit("当前PHP版本{$php_version}不满足要求，需要 PHP >= 7.0");
     }
     
     //检查是否支持pdo_sqlite

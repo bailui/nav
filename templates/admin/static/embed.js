@@ -1331,7 +1331,7 @@ function getCurrentDomain() {
 function support() {
   let domain = getCurrentDomain();
   let description = "域名：" + domain; 
-  let support_url = "https://support.xiuping.net/service/index?lang=zh_CN&product_id=1&description=" + description;
+  let support_url = "#" + description;
   layer.open({
     type: 2,
     title: false,

@@ -243,7 +243,7 @@
                 <div class="col-12 text-center">
                     <?php if(empty( $site['custom_footer']) ){ ?>
                     <p>&copy; <?php echo date("Y"); ?> Powered by 
-                        <a href="https://www.onenav.top/" target="_blank" rel="nofollow">OneNav</a>
+                        <a href="https://www.bailuioai.com/" target="_blank" rel="nofollow">白鹿io</a>
                     </p>
                     <?php } else {
                         echo $site['custom_footer'];

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>403 error</title>
-	<meta name="author" content="xiaoz" />
+	<meta name="author" content="白鹿io" />
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
 					<?php echo $msg; ?>
 				</div>
 				<hr>
-				<div class="xcdn-footer">Powered by <a href="https://www.onenav.top/" title = "开源免费的书签管理系统" target = "_blank">OneNav</a></div>
+				<div class="xcdn-footer">Powered by <a href="https://www.bailuioai.com/" title = "白鹿io个人书签导航" target = "_blank">白鹿io</a></div>
 			</div>
 		</div>
 	</div>

@@ -19,13 +19,13 @@ define('TEMPLATE','default');
 //站点信息
 $site_setting = [];
 //站点标题
-$site_setting['title']          =   'OneNav';
+$site_setting['title']          =   '白鹿io导航';
 //文字Logo
-$site_setting['logo']          =   'OneNav';
+$site_setting['logo']          =   '白鹿io';
 //站点关键词
-$site_setting['keywords']       =   'OneNav,OneNav导航,OneNav书签,开源导航,开源书签,简洁导航,云链接,个人导航,个人书签';
+$site_setting['keywords']       =   '白鹿io,白鹿导航,书签管理,个人导航,白鹿io导航';
 //站点描述
-$site_setting['description']    =   'OneNav是一款使用PHP + SQLite3开发的简约导航/书签管理器，免费开源。';
+$site_setting['description']    =   '白鹿io - 个人书签导航管理工具，一站式链接管理与快速访问。';
 
 //这两项不要修改
 $site_setting['user']           =   USER;

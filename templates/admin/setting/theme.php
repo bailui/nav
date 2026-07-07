@@ -7,9 +7,9 @@
     <!-- 说明提示框 -->
     <div class="layui-col-lg12">
       <div class="setting-msg">
-        <p>1. 主题更换及设置说明，请参考：<a href="https://dwz.ovh/yoyaf" target = "_blank" title = "主题更换及设置说明">https://dwz.ovh/yoyaf</a></p>
-        <p>2. 主题本身不收取费用，但为了分摊服务器存储和带宽成本，主题下载和更新需要订阅用户才能使用，敬请谅解！订阅地址：<a href="https://dwz.ovh/69h9q" rel="nofollow" target="_blank" title="购买订阅服务">https://dwz.ovh/69h9q</a></p>
-        <p>3. 部分主题来自其它开源项目，OneNav仅做适配，主题版权归原作者所有</p>
+        <p>1. 主题更换及设置说明，请参考：主题更换及设置说明</p>
+        <p>2. 所有主题均可免费使用，无需订阅。</p>
+        <p>3. 部分主题来自其它开源项目，白鹿io仅做适配，主题版权归原作者所有</p>
         <p>4. 主题提交请联系QQ:446199062</p>
       </div>
     </div>
@@ -262,14 +262,14 @@ function down_theme(name,type) {
 function update_theme(name,version){
     //获取远程主题最新版本号
     var index = layer.load(1);
-    var infourl = "https://onenav.xiaoz.top/themes/" + name + "/info.json";
+    var infourl = "https://localhost/themes/" + name + "/info.json";
     $.ajax({
         type:"HEAD",
         async:true,
         url:infourl,
         statusCode: {
         200: function() {
-            $.get("https://onenav.xiaoz.top/themes/" + name + "/info.json",function(data,status){
+            $.get("https://localhost/themes/" + name + "/info.json",function(data,status){
                 let new_version = data.version;
                 if ( version >= new_version ) {
                     layer.closeAll('loading');
@@ -297,7 +297,7 @@ function update_theme(name,version){
 function check_update(){
     // console.log('fdsfsdf');
     //请求远程主题列表
-    $.get("https://onenav.xiaoz.top/v1/theme_list.php",function(data,status){
+    $.get("https://localhost/v1/theme_list.php",function(data,status){
         let result = data.data;
         console.log(result);
         //console.log(result.5iux);

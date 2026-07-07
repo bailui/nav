@@ -231,6 +231,9 @@ function check_all_cat(){
  * name：检查是否存在明文密码参数，如果存在，则提示重新初始化
  */
 function unSafe() {
+    // 白鹿io定制：跳过明文密码检查
+    return;
+    
     $password = @PASSWORD;
     
     if( isset($password) && $password !== 'PASSWORD' ) {

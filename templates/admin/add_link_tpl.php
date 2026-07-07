@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>OneNav后台管理</title>
-  <link rel='stylesheet' href='https://libs.xiaoz.top/layui/v2.5.4/css/layui.css'>
+  <title>白鹿io后台管理</title>
+  <link rel='stylesheet' href='https://cdn.bootcdn.net/ajax/libs/layui/2.5.4/css/layui.css'>
   <link rel='stylesheet' href='templates/admin/static/style.css'>
 </head>
 <body>
@@ -74,8 +74,8 @@
 <!-- 内容主题区域END -->
 </div>
   
-<script src = 'https://libs.xiaoz.top/jquery/2.2.4/jquery.min.js'></script>
-<script src = 'https://libs.xiaoz.top/layui/v2.5.4/layui.js'></script>
+<script src = 'https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
+<script src = 'https://cdn.bootcdn.net/ajax/libs/layui/2.5.4/layui.js'></script>
 <script src="templates/admin/static/embed.js"></script>
 
 </body>

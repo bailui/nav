@@ -7,26 +7,26 @@
 <div class="layui-row content-body place-holder" style="padding-bottom: 3em;">
     <div class="layui-col-lg12">
       <blockquote class="layui-elem-quote" style="border-left-color: #ff5722; background-color: #fff4e8; color: #8a4b08; font-size: 15px; line-height: 1.8; margin-bottom: 15px;">
-        <strong>OneNav重构版ZMark现已发布，</strong><a href="https://dwz.ovh/amr6" target="_blank" rel="noopener noreferrer" style="color: #ff5722; font-weight: bold; text-decoration: underline;">点此了解如何升级</a>。
+        所有功能已全部解锁，尽情使用！
       </blockquote>
     </div>
     <!-- 说明提示框 -->
     <div class="layui-col-lg12">
       <div class="setting-msg">
         <ol>
-            <li>您可以前往：<a href="https://dwz.ovh/69h9q" rel = "nofollow" target = "_blank" title = "购买订阅服务">https://dwz.ovh/69h9q</a> 购买订阅服务，订阅后可以：</li>
-            <li>1. 享受一键更新OneNav</li>
+            <li>所有功能已解锁，无需额外购买订阅</li>
+            <li>1. 享受一键更新白鹿io导航</li>
             <li>2. 可在线下载和更新主题</li>
             <li>3. 可享受一对一售后服务</li>
-            <li>4. 可帮助OneNav持续发展，让OneNav变得更加美好</li>
+            <li>4. 可帮助白鹿io导航持续发展，让白鹿io导航变得更加美好</li>
             <li>5. 更多高级功能（自定义版权、广告管理等）</li>
             <li>6. 数据库备份</li>
         </ol>
       </div>
       <div class="setting-msg">
         <p>1. 系统检测到您的域名为<strong style="color:#31BDEC;"><code><?php echo get_host(); ?></code></strong>，购买订阅时请填写此域名！</p>
-        <p>2. 若域名填写错误或更换域名，请前往 <a title = "修改OneNav订阅域名" href="https://dwz.ovh/p6u2w" target="_blank">https://dwz.ovh/p6u2w</a> 修改订阅！</p>
-        <p>3. 如果遇到问题无法解决，可联系售后微信：<code>xiaozme</code>（仅限订阅用户）</p>
+        <p>2. 白鹿io导航 - 所有功能已解锁</p>
+        <p>3. 如果遇到问题无法解决，可联系售后微信：<code>bailuioai</code>（仅限订阅用户）</p>
         <!-- <p>3. Docker用户或IP访问的用户，请参考<a href="https://dwz.ovh/cve3d" target="_blank">没有域名购买订阅</a></p> -->
       </div>
     </div>
@@ -67,7 +67,7 @@
         <div class="layui-form-item">
             <button class="layui-btn" lay-submit="" lay-filter="set_subscribe">保存设置</button>
             <button class="layui-btn" lay-submit="" lay-filter="reset_subscribe">删除订阅</button>
-            <a class="layui-btn layui-btn-danger" onclick="buySubscribe('<?php echo get_host(); ?>')" rel = "nofollow" title = "点此购买订阅" href="javascript:;"><i class="fa fa-shopping-cart"></i> 购买订阅</a>
+            <a class="layui-btn layui-btn-primary" href="https://www.bailuioai.com/" target="_blank"><i class="fa fa-globe"></i> 白鹿io官网</a>
             <a class="layui-btn layui-btn-danger" onclick="openRedeem()" rel = "nofollow" title = "点此使用兑换码" href="javascript:;"><i class="layui-icon layui-icon-gift"></i> 使用兑换码</a>
         </div>
 
@@ -97,7 +97,7 @@
         <div class="layui-input-inline">
             <button id = "btn_update" class="layui-btn" lay-submit="" onclick = "update_main()">立即更新</button>
             <button id = "btn_updating" style = "display:none;" class="layui-btn layui-btn-disabled" >更新中，请勿关闭窗口</button>
-            <a href="https://dwz.ovh/7q4z6" title = "点此查看更新失败的原因" rel = "nofollow" target = "_blank">更新失败？</a>
+            
         </div>
         <!-- 更新进度条 -->
         <div id="progress">
@@ -143,7 +143,7 @@
     // 购买订阅
     function buySubscribe(url) {
         // 新窗口打开购买订阅页面
-        window.open("https://shop.xiuping.net/onenav/index?domain=" + url);
+        window.open("https://www.bailuioai.com/?ref=" + url);
     }
     
     //获取可更新版本
